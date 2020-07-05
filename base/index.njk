@@ -78,9 +78,9 @@
                             </div>
                         </a>
                         {% for grp in shop.groups %}
-                            <a href='/group/{{ grp.id }}' class='border-b {% if group_view and group.id == grp.id %}accent-flavor{% endif %}'>
+                            <a href='/group/{{ grp.id }}' class='{% if group_view and group.id == grp.id %}border-l-2 bg-gray-100 accent-flavor-border{% else %}border-b{% endif %}'>
                                 <div class='flex p-1 px-4 p-2'>
-                                    <span class='{% if group_view and group.id == grp.id %}text-white{% else %}text-black{% endif %}'>{{ grp.title }}</span>
+                                    <span class='text-black'>{{ grp.title }}</span>
                                 </div>
                             </a>
                         {% endfor %}
