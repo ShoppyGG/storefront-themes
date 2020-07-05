@@ -1,57 +1,59 @@
 <div id='template' class='flex flex-1 flex-col bg-gray-100'>
     {# Header #}
-    <div class='flex flex-col justify-center w-full xl:px-96 lg:px-32 px-16 py-24 xl:py-32 background-cover'>
-        <div class='flex flex-1 flex-row'>
-            {# Avatar #}
-            <div class="flex items-center justify-center">
-                <a href='/' class='relative h-24 w-24'>
-                    <img class="rounded-full h-24 w-24 shadow-md" src="{{ shop.avatar }}">
-                    <div class="flex absolute avatar-status h-5 w-5 rounded-full {% if shop.online.state %}accent-flavor-dark{% else %}bg-red-500{% endif %}"></div>
-                </a>
-            </div>
+    <div class='flex flex-col justify-center items-center w-full py-24 xl:py-32 background-cover'>
+        <div class='flex flex-1 flex-col justify-center w-3/4'>
+            <div class='flex flex-1 flex-col md:flex-row'>
+                {# Avatar #}
+                <div class="flex items-center justify-center">
+                    <a href='/' class='relative h-24 w-24'>
+                        <img class="rounded-full h-24 w-24 shadow-md" src="{{ shop.avatar }}">
+                        <div class="flex absolute avatar-status h-5 w-5 rounded-full {% if shop.online.state %}accent-flavor-dark{% else %}bg-red-500{% endif %}"></div>
+                    </a>
+                </div>
 
-            {# Username #}
-            <div class="flex flex-1 flex-col px-12 justify-center">
-                <a href='/' class="no-underline text-white text-3xl font-bold">{{ shop.username }}</a>
-                <a class="no-underline text-white">An online shop</a>
-            </div>
+                {# Username #}
+                <div class="flex flex-1 flex-col px-12 justify-center">
+                    <a href='/' class="no-underline text-white text-3xl font-bold md:text-left text-center">{{ shop.username }}</a>
+                    <a class="no-underline text-white md:text-left text-center">An online shop</a>
+                </div>
 
-            {# Feedback #}
-            <div class="flex flex-col m-3">
-                <a class='text-white mb-3 text-sm' href='/'>
-                    <i class='fa fa-chevron-left text-2xs mr-1'></i>
-                    Back
-                </a>
-                <div class="flex flex-col lg:flex-row">
-                    <div class='flex flex-col justify-center mb-3 lg:mb-0 lg:mr-6'>
-                        <span class='text-gray-600 text-sm mb-1'>Positive</span>
-                        <div class='flex flex-row'>
-                            <span class='text-white mr-3 text-xs'>{{ shop.score.positive }}</span>
-                            <div class='relative flex w-32 h-4 bg-gray-700 rounded'>
-                                <span class='absolute flex items-center justify-center text-2xs text-gray-300 reputation-descriptor w-12 h-4'>{{ shop.statistics.positive }}%</span>
-                                <div class='flex bg-green-500 rounded' style='width: {{ shop.statistics.positive }}%;'></div>
+                {# Feedback #}
+                <div class="flex flex-col m-3 mt-12 md:mt-3">
+                    <a class='text-white mb-3 text-sm' href='/feedbacks'>
+                        Feedbacks
+                        <i class='fa fa-chevron-right text-2xs ml-1'></i>
+                    </a>
+                    <div class="flex flex-col lg:flex-row">
+                        <div class='flex flex-col justify-center mb-3 lg:mb-0 lg:mr-6'>
+                            <span class='text-gray-600 text-sm mb-1'>Positive</span>
+                            <div class='flex flex-row'>
+                                <span class='text-white mr-3 text-xs'>{{ shop.score.positive }}</span>
+                                <div class='relative flex w-32 h-4 bg-gray-700 rounded'>
+                                    <span class='absolute flex items-center justify-center text-2xs text-gray-300 reputation-descriptor w-12 h-4'>{{ shop.statistics.positive }}%</span>
+                                    <div class='flex bg-green-500 rounded' style='width: {{ shop.statistics.positive }}%;'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class='flex flex-col justify-center mb-3 lg:mb-0 lg:mr-6'>
-                        <span class='text-gray-600 text-sm mb-1'>Neutral</span>
-                        <div class='flex flex-row'>
-                            <span class='text-white mr-3 text-xs'>{{ shop.score.neutral }}</span>
-                            <div class='relative flex w-32 h-4 bg-gray-700 rounded'>
-                                <span class='absolute flex items-center justify-center text-2xs text-gray-300 reputation-descriptor w-12 h-4'>{{ shop.statistics.neutral }}%</span>
-                                <div class='flex bg-gray-400 rounded' style='width: {{ shop.statistics.neutral }}%;'></div>
+                        <div class='flex flex-col justify-center mb-3 lg:mb-0 lg:mr-6'>
+                            <span class='text-gray-600 text-sm mb-1'>Neutral</span>
+                            <div class='flex flex-row'>
+                                <span class='text-white mr-3 text-xs'>{{ shop.score.neutral }}</span>
+                                <div class='relative flex w-32 h-4 bg-gray-700 rounded'>
+                                    <span class='absolute flex items-center justify-center text-2xs text-gray-300 reputation-descriptor w-12 h-4'>{{ shop.statistics.neutral }}%</span>
+                                    <div class='flex bg-gray-400 rounded' style='width: {{ shop.statistics.neutral }}%;'></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class='flex flex-col justify-center'>
-                        <span class='text-gray-600 text-sm mb-1'>Negative</span>
-                        <div class='flex flex-row'>
-                            <span class='text-white mr-3 text-xs'>{{ shop.score.negative }}</span>
-                            <div class='relative flex w-32 h-4 bg-gray-700 rounded'>
-                                <span class='absolute flex items-center justify-center text-2xs text-gray-300 reputation-descriptor w-12 h-4'>{{ shop.statistics.negative }}%</span>
-                                <div class='flex bg-red-500 rounded' style='width: {{ shop.statistics.negative }}%;'></div>
+                        <div class='flex flex-col justify-center'>
+                            <span class='text-gray-600 text-sm mb-1'>Negative</span>
+                            <div class='flex flex-row'>
+                                <span class='text-white mr-3 text-xs'>{{ shop.score.negative }}</span>
+                                <div class='relative flex w-32 h-4 bg-gray-700 rounded'>
+                                    <span class='absolute flex items-center justify-center text-2xs text-gray-300 reputation-descriptor w-12 h-4'>{{ shop.statistics.negative }}%</span>
+                                    <div class='flex bg-red-500 rounded' style='width: {{ shop.statistics.negative }}%;'></div>
+                                </div>
                             </div>
                         </div>
                     </div>
