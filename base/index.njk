@@ -88,7 +88,7 @@
                 </div>
             </div>
         {% endif %}
-        <div class='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 mt-8 w-full md:w-3/4 ml-auto mr-auto pb-12 justify-center'>
+        <div class='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 mt-8 w-full md:w-3/4 ml-auto mr-auto pb-12 justify-center stretch-fix'>
             {% for product in shop.products %}
                 <div>
                     <a href='/product/{{ product.id }}' class='flex flex-1 flex-col rounded shadow-md'>
